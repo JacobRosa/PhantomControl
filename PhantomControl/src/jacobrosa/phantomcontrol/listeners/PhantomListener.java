@@ -1,6 +1,5 @@
 package jacobrosa.phantomcontrol.listeners;
 
-import org.bukkit.Bukkit;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Phantom;
 import org.bukkit.event.EventHandler;
@@ -19,14 +18,10 @@ public class PhantomListener implements Listener{
 		if(!(livingEntity instanceof Phantom))
 			return;
 		
-		Bukkit.getServer().broadcastMessage(reason.toString());
 		if(reason == SpawnReason.NATURAL) {
 			if(!ServerData.allowPhantomNaturalSpawning()) {
 				Phantom phantom = (Phantom) livingEntity;
 				phantom.remove();
-				
-				//Debug
-				Bukkit.getServer().broadcastMessage("Phantom Removed");
 			}
 			return;
 		}
@@ -34,9 +29,6 @@ public class PhantomListener implements Listener{
 		if(!ServerData.allowPhantomForcedSpawning()) {
 			Phantom phantom = (Phantom) livingEntity;
 			phantom.remove();
-				
-			//Debug
-			Bukkit.getServer().broadcastMessage("Phantom Removed");
 		}
 	}
 
