@@ -1,0 +1,11 @@
+name: PhantomControl
+version: 1.0.1
+main: jacobrosa.phantomcontrol.PhantomControl
+author: KingBlueSapphire
+
+commands:
+  phantom:
+    usage: /phantom <natural|forced> <true|false>
+    description: Toggle phantom spawning
+    permission: nophantoms.command.phantom
+    aliases: [ phantoms ]
