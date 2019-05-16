@@ -48,7 +48,7 @@ public class CommandPhantom extends CustomCommand{
 			return;
 		}
 		if(args.length == 1) {
-			if(args[0].equalsIgnoreCase("info")) {
+			if(args[0].equalsIgnoreCase("info")) { 
 				boolean naturalSpawning = ServerData.allowPhantomNaturalSpawning(), forcedSpawning = ServerData.allowPhantomForcedSpawning();
 				commandSender.sendMessage(PhantomControl.getPluginName() + " v" + PhantomControl.getPluginVersion() + " by kingbluesapphire");
 				commandSender.sendMessage("Natural Phantom Spawning: " + (naturalSpawning ? ChatColor.GREEN : ChatColor.RED) + ServerData.allowPhantomNaturalSpawning());
@@ -60,7 +60,7 @@ public class CommandPhantom extends CustomCommand{
 			return;
 		}
 		processInput(commandSender, args[0], args[1]);
-		return;
+		return; 
 	}
 	
 	private void processInput(CommandSender sender, String reasonInput, String valueInput) {

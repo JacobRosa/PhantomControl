@@ -4,7 +4,7 @@ public class Utils {
 	
 	public static boolean isValidBoolean(String string) {
 		if(string.equalsIgnoreCase("true") || string.equalsIgnoreCase("false"))
-			return true;
+			return true; 
 		else
 			return false;
 	}
