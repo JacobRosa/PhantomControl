@@ -23,7 +23,7 @@ public class CommandPhantom extends CustomCommand{
 			if(args.length == 1) {
 				if(args[0].equalsIgnoreCase("info")) {
 					boolean naturalSpawning = ServerData.allowPhantomNaturalSpawning(), forcedSpawning = ServerData.allowPhantomForcedSpawning();
-					player.sendMessage(PhantomControl.getPluginName() + " v" + PhantomControl.getPluginVersion());
+					player.sendMessage(PhantomControl.getPluginName() + " v" + PhantomControl.getPluginVersion() + " by kingbluesapphire");
 					player.sendMessage("Natural Phantom Spawning: " + (naturalSpawning ? ChatColor.GREEN : ChatColor.RED) + ServerData.allowPhantomNaturalSpawning());
 					player.sendMessage("Forced Phantom Spawning: " + (forcedSpawning ? ChatColor.GREEN : ChatColor.RED) + ServerData.allowPhantomForcedSpawning());
 					return;
@@ -67,6 +67,10 @@ public class CommandPhantom extends CustomCommand{
 		PhantomSpawnReason spawnReason = getPhantomSpawnReasonFromString(reasonInput);
 		if(spawnReason == null) {
 			sender.sendMessage(ChatColor.RED + "Invalid spawn reason!");
+			return;
+		}
+		if(!Utils.isValidBoolean(valueInput)) {
+			sender.sendMessage(ChatColor.RED + "Invalid value.");
 			return;
 		}
 		boolean valueTo = Utils.booleanFromString(valueInput);
