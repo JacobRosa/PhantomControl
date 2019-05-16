@@ -50,7 +50,7 @@ public class CommandPhantom extends CustomCommand{
 		if(args.length == 1) {
 			if(args[0].equalsIgnoreCase("info")) {
 				boolean naturalSpawning = ServerData.allowPhantomNaturalSpawning(), forcedSpawning = ServerData.allowPhantomForcedSpawning();
-				commandSender.sendMessage(PhantomControl.getPluginName() + " v" + PhantomControl.getPluginVersion());
+				commandSender.sendMessage(PhantomControl.getPluginName() + " v" + PhantomControl.getPluginVersion() + " by kingbluesapphire");
 				commandSender.sendMessage("Natural Phantom Spawning: " + (naturalSpawning ? ChatColor.GREEN : ChatColor.RED) + ServerData.allowPhantomNaturalSpawning());
 				commandSender.sendMessage("Forced Phantom Spawning: " + (forcedSpawning ? ChatColor.GREEN : ChatColor.RED) + ServerData.allowPhantomForcedSpawning());
 				return;
