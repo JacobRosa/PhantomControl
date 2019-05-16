@@ -7,5 +7,5 @@ commands:
   phantom:
     usage: /phantom <natural|forced> <true|false>
     description: Toggle phantom spawning
-    permission: nophantoms.command.phantom
+    permission: phantomcontrol.command.phantom
     aliases: [ phantoms ]

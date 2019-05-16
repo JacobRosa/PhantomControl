@@ -14,7 +14,7 @@ public class CommandPhantom extends CustomCommand{
 
 	@Override
 	public void run(Player player, Command cmd, String[] args) {
-		if(player.hasPermission("nophantoms.command.phantom")) {
+		if(player.hasPermission("phantomcontrol.command.phantom")) {
 			if(args.length == 0) {
 				player.sendMessage(ChatColor.GRAY + "/phantom <natural|forced> <true|false>");
 				player.sendMessage(ChatColor.GRAY + "/phantom info");
