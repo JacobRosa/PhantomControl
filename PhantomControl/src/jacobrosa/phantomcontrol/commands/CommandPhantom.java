@@ -31,6 +31,10 @@ public class CommandPhantom extends CustomCommand{
 					player.sendMessage("Forced Phantom Spawning: " + (forcedSpawning ? ChatColor.GREEN : ChatColor.RED) + ServerData.allowPhantomForcedSpawning());
 					return;
 				}
+				if(args[0].equalsIgnoreCase("version")) {
+					player.sendMessage(ChatColor.GRAY + PhantomControl.getPluginName() + " v" + PhantomControl.getPluginVersion() + " by kingbluesapphire");
+					return;
+				}
 				player.sendMessage(ChatColor.GRAY + "/phantom <natural|forced> <true|false>");
 				player.sendMessage(ChatColor.GRAY + "/phantom info");
 				return;
@@ -65,7 +69,7 @@ public class CommandPhantom extends CustomCommand{
 		processInput(commandSender, args[0], args[1]);
 		return; 
 	}
-	
+
 	@Override
 	public List<String> onTabComplete(CommandSender sender, Command cmd, String label, String[] args) {
 		if(args.length > 2)
@@ -84,7 +88,7 @@ public class CommandPhantom extends CustomCommand{
 		arg2.add("false");
 		return arg2;
 	}
-	
+
 	private void processInput(CommandSender sender, String reasonInput, String valueInput) {
 		PhantomSpawnReason spawnReason = getPhantomSpawnReasonFromString(reasonInput);
 		if(spawnReason == null) {
@@ -102,7 +106,7 @@ public class CommandPhantom extends CustomCommand{
 			ServerData.setAllowPhantomForcedSpawning(valueTo);
 		sender.sendMessage(ChatColor.GREEN + "Phantoms spawn reason " + spawnReason.toString().toLowerCase() + " set to " + valueTo);
 	}
-	
+
 	private PhantomSpawnReason getPhantomSpawnReasonFromString(String input) {
 		if(input.equalsIgnoreCase("natural")) {
 			return PhantomSpawnReason.Natural;
