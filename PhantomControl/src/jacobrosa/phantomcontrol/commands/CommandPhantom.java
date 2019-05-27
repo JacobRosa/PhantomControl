@@ -1,5 +1,8 @@
 package jacobrosa.phantomcontrol.commands;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -61,6 +64,25 @@ public class CommandPhantom extends CustomCommand{
 		}
 		processInput(commandSender, args[0], args[1]);
 		return; 
+	}
+	
+	@Override
+	public List<String> onTabComplete(CommandSender sender, Command cmd, String label, String[] args) {
+		if(args.length > 2)
+			return new ArrayList<>();
+		if(args.length == 1) {
+			List<String> arg1 = new ArrayList<>();
+			arg1.add("natural");
+			arg1.add("forced");
+			arg1.add("info");
+			return arg1;
+		}
+		if(args[0].equalsIgnoreCase("info"))
+			return new ArrayList<>();
+		List<String> arg2 = new ArrayList<String>();
+		arg2.add("true");
+		arg2.add("false");
+		return arg2;
 	}
 	
 	private void processInput(CommandSender sender, String reasonInput, String valueInput) {

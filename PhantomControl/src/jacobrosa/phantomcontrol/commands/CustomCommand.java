@@ -1,11 +1,15 @@
 package jacobrosa.phantomcontrol.commands;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 
-public abstract class CustomCommand implements CommandExecutor{
+public abstract class CustomCommand implements CommandExecutor, TabCompleter {
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
 		if (sender instanceof Player) {
@@ -19,6 +23,11 @@ public abstract class CustomCommand implements CommandExecutor{
 		}
 		
 		return true;
+	}
+	
+	@Override
+	public List<String> onTabComplete(CommandSender sender, Command cmd, String arg2, String[] args) {
+		return new ArrayList<String>();
 	}
 
 	public abstract void run(Player player, Command paramCommand, String[] paramArrayOfString);
